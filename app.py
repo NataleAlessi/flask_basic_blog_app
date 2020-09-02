@@ -83,3 +83,7 @@ def delete(id):
     conn.close()
     flash('"{}" was successfully deleted!'.format(post['title']))
     return redirect(url_for('index'))
+
+@app.route('/test_view')
+def test_view():
+    return render_template('bootstrap4/base.html')
