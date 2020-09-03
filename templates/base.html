@@ -16,15 +16,15 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{url_for('about')}}">About <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('about')}}">About</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{url_for('create')}}">New Post</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown_for_future_implementations">
               <a class="dropdown-item" href="#">Some cool</a>
               <a class="dropdown-item" href="#">Dropdown stuff</a>
               <a class="dropdown-item" href="#">Happening here</a>
@@ -45,10 +45,15 @@
         <div class="starter-template">
 
             <div class="container">
-            {% for message in get_flashed_messages() %}
-                <div class="alert alert-danger">{{ message }}</div>
-            {% endfor %}
-            {% block content %} {% endblock %}
+
+              {% for message in get_flashed_messages() %}
+                  <div class="alert alert-danger">{{ message }}</div>
+              {% endfor %}
+              <div class="row">
+                <div class="col text-center">
+                  {% block content %} {% endblock %}
+                </div>
+              </div>
             </div>
 
         </div>
