@@ -17,15 +17,7 @@ def get_post(post_id):
     return post
 
 app = Flask(__name__)
-# config_s da spostare in file appropriato
-app.config['SECRET_KEY'] = 'test secret key'
-app.config['FLASK_ENV'] = 'production'
-#app.config['FLASK_ENV'] = 'development'
-#app.config['FLASK_DEBUG'] = True
-app.config['FLASK_DEBUG'] = False
-# rimando esplicito a valore standard delle variabili
-app.config['STATIC_FOLDER'] = '/static'
-app.config['TEMPLATES_FOLDER'] = '/templates'
+app.config.from_pyfile('config.py')
 
 @app.route('/')
 def index():

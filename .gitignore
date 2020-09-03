@@ -2,4 +2,4 @@ env
 hello.py
 __pycache__/
 database.db
-
+.env
